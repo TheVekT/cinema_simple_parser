@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resources/qrc/resources.qrc">
+    <normaloff>:/icons/icons/logo.png</normaloff>:/icons/icons/logo.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(10, 18, 27)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>10</number>
+    </property>
+    <property name="topMargin">
+     <number>10</number>
+    </property>
+    <property name="rightMargin">
+     <number>10</number>
+    </property>
+    <property name="bottomMargin">
+     <number>10</number>
+    </property>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="lay1">
+        <property name="maximumSize">
+         <size>
+          <width>550</width>
+          <height>50</height>
+         </size>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="minimumSize">
+            <size>
+             <width>130</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(229, 230, 206);
+font-size: 14px;
+font-family: &quot;cascadia code&quot;</string>
+           </property>
+           <property name="text">
+            <string>Кінотеатр:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox">
+           <property name="minimumSize">
+            <size>
+             <width>350</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+	padding-left: 10px;
+	font-size: 14px;
+	background-color: rgba(20, 20, 20, 100);
+    border: 1px solid rgba(0, 170, 255, 30);
+    border-radius: 5px;
+	color: white;
+	font-family: &quot;cascadia code&quot;;
+}
+QComboBox::drop-down {
+    background-color: rgb(226, 227, 210);
+	width: 15px;
+    border-radius: 5px;
+}
+QComboBox::drop-down:on{
+	background-color: rgba(0, 189, 119, 200);
+}
+
+QAbstractItemView {
+	border-radius: 10px;
+	padding: 10px;
+	background-color: rgba(200, 200, 200, 0);
+    border: 1px solid rgba(90, 160, 155, 200);
+	color: white;
+}
+</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Планета кіно LeoLand</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+border: 1px solid rgba(0, 170, 255, 30);
+border-radius: 5px;
+}
+QPushButton::hover{
+background-color: black;
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../../resources/qrc/resources.qrc">
+             <normaloff>:/icons/icons/refresh.png</normaloff>:/icons/icons/refresh.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="minimumSize">
+         <size>
+          <width>980</width>
+          <height>640</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">    QTabWidget::pane { /* Убираем рамку вокруг содержимого */
+		border-radius: 5px; /* Закругляем края */
+        border: 1px solid rgba(0, 170, 255, 30);
+        background: white; /* Цвет фона вкладок */
+    }
+
+    QTabBar::tab { /* Скрываем вкладки */
+        width: 0; /* Устанавливает ширину вкладки в 0 */
+        height: 0; /* Устанавливает высоту вкладки в 0 */
+        margin: 0;
+        padding: 0;
+        border: none;
+    }</string>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>Tab 1</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QScrollArea" name="scrollArea">
+            <property name="styleSheet">
+             <string notr="true">QScrollArea{
+	border: none;
+}
+QScrollArea QScrollBar:vertical {
+    border: 0px;  /* Граница области скролла */
+    background: rgba(0,0,0,0);        /* Фон скроллбара */
+    width: 12px;                /* Ширина вертикального скроллбара */
+    margin: 3px 0 3px 0;      /* Отступы сверху и снизу (чтобы кнопки не обрезались) */
+}
+QScrollArea QScrollBar::handle:vertical {
+	border-radius: 3px;
+    background: #111111;        /* Цвет ползунка */
+    min-height: 5px;           /* Минимальная высота ползунка */
+}
+QScrollArea QScrollBar::handle:vertical:hover {
+	border-radius: 3px;
+    background: #FFDAB9;        /* Цвет ползунка */
+    min-height: 5px;           /* Минимальная высота ползунка */
+}
+
+QScrollArea QScrollBar::add-line:vertical {
+    height: 0px;               /* Высота кнопки */
+}
+
+QScrollArea QScrollBar::sub-line:vertical {
+    height: 0px;               /* Высота кнопки */
+}
+
+QScrollArea QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    border: none;               /* Убираем границу стрелок */
+    width: 0px;
+    height: 0px;
+}
+
+QScrollArea QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;           /* Цвет фона за ползунком */
+}</string>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>978</width>
+               <height>638</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <property name="spacing">
+                 <number>15</number>
+                </property>
+                <property name="leftMargin">
+                 <number>15</number>
+                </property>
+                <property name="topMargin">
+                 <number>15</number>
+                </property>
+                <property name="rightMargin">
+                 <number>15</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>15</number>
+                </property>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>Tab 2</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QScrollArea" name="scrollArea_2">
+            <property name="styleSheet">
+             <string notr="true">QScrollArea{
+	border: none;
+}
+QScrollArea QScrollBar:vertical {
+    border: 0px;  /* Граница области скролла */
+    background: rgba(0,0,0,0);        /* Фон скроллбара */
+    width: 12px;                /* Ширина вертикального скроллбара */
+    margin: 3px 0 3px 0;      /* Отступы сверху и снизу (чтобы кнопки не обрезались) */
+}
+QScrollArea QScrollBar::handle:vertical {
+	border-radius: 3px;
+    background: #111111;        /* Цвет ползунка */
+    min-height: 5px;           /* Минимальная высота ползунка */
+}
+QScrollArea QScrollBar::handle:vertical:hover {
+	border-radius: 3px;
+    background: #FFDAB9;        /* Цвет ползунка */
+    min-height: 5px;           /* Минимальная высота ползунка */
+}
+
+QScrollArea QScrollBar::add-line:vertical {
+    height: 0px;               /* Высота кнопки */
+}
+
+QScrollArea QScrollBar::sub-line:vertical {
+    height: 0px;               /* Высота кнопки */
+}
+
+QScrollArea QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    border: none;               /* Убираем границу стрелок */
+    width: 0px;
+    height: 0px;
+}
+
+QScrollArea QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;           /* Цвет фона за ползунком */
+}</string>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents_2">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>978</width>
+               <height>638</height>
+              </rect>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_6">
+                <property name="spacing">
+                 <number>15</number>
+                </property>
+                <property name="leftMargin">
+                 <number>15</number>
+                </property>
+                <property name="topMargin">
+                 <number>15</number>
+                </property>
+                <property name="rightMargin">
+                 <number>15</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>15</number>
+                </property>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../resources/qrc/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
