@@ -8,19 +8,20 @@ from bs4 import BeautifulSoup
 import time
 import asyncio
 import sys, os
+
 def get_chromedriver_path():
     if getattr(sys, 'frozen', False):
-        # Если приложение запущено из скомпилированного файла
+        # App is running from frozen bundle
         chromedriver_path = os.path.join(sys._MEIPASS, 'chromedriver.exe')
     else:
-        # Если приложение запущено из интерпретатора
-        chromedriver_path = os.path.join('E:\\College\\b_labu\\lab10\\cinema_parser\\parser\\driver\\chromedriver-win64\\chromedriver.exe')  # Замените на ваш путь при разработке
+        # App is running from interpreter
+        chromedriver_path = os.path.join('E:\\College\\b_labu\\lab10\\cinema_parser\\parser\\driver\\chromedriver-win64\\chromedriver.exe')
     return chromedriver_path
 
 class MovieParser:
     def __init__(self):
 
-        #service = Service(".\\cinema_parser\\parser\\driver\\chromedriver-win64\\chromedriver.exe")
+
         chromedriver_path = get_chromedriver_path()
         service = Service(executable_path=chromedriver_path)
         options = Options()
@@ -46,21 +47,21 @@ class MovieParser:
 
         movies = {}
         for movie_div in movie_divs:
-            # Get movie title
+
             movie_name_tag = movie_div.find("a", class_="movie-name")
             if not movie_name_tag:
                 movie_name_tag = movie_div.find("a", class_="tablet-movie-name")
             movie_name = movie_name_tag.text.strip()
             movie_url = movie_name_tag["href"]
 
-            # Find movie poster image link (icon link)
+
             movie_img_tag = movie_div.find("img", class_="poster")
             if movie_img_tag:
                 movie_icon_url = movie_img_tag["srcset"].split(" ")[0]
             else:
                 movie_icon_url = ""
 
-            # Parse sessions by date and technology
+
             movie_info_section = movie_div.find("section", class_="movie-info")
             dates = movie_info_section.find_all("div", class_="date")
             sessions_by_date = {}
@@ -74,13 +75,13 @@ class MovieParser:
                     tech_title = tech.find("span", class_="technology-title").text.strip()
                     session_buttons = tech.find_all("button", class_="chips")
 
-                    # Collect times for sessions
+
                     times = [button.text.strip() for button in session_buttons if not button.has_attr("disabled")]
                     tech_sessions[tech_title] = times
 
                 sessions_by_date[date] = tech_sessions
 
-            # Save movie info
+
             movies[movie_name] = {
                 "url": movie_url,
                 "sessions": sessions_by_date,
